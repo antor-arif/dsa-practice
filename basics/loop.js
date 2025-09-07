@@ -84,3 +84,23 @@ if ( userPrompt === null || userPrompt.toLowerCase() === 'exit' ) {
         isPrime(Number(userPrompt)) ? console.log(userPrompt + " is a prime number.") : console.log(userPrompt + " is not a prime number.");
     }
 }
+
+
+// Sum of digits of a number
+if ( userPrompt === null || userPrompt.toLowerCase() === 'exit' ) {
+    console.log("User chose to exit");
+}else if (isNaN(userPrompt)){
+    console.log("Invalid input. Please enter a valid number.");
+}else{
+    if(Number(userPrompt) < 0){
+        console.log("Please enter a non-negative number.");
+    }else{
+        let sumOfDigits = 0;
+        let temp = Number(userPrompt);
+        while (temp > 0) {
+            sumOfDigits += temp % 10;
+            temp = Math.floor(temp / 10);
+        }
+        console.log("Sum of digits of " + userPrompt + " is: " + sumOfDigits);
+    }
+}
