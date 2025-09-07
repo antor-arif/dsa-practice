@@ -125,3 +125,33 @@ if ( userPrompt === null || userPrompt.toLowerCase() === 'exit' ) {
         console.log("Reversed number of " + userPrompt + " is: " + reversedNumber);
     }
 }
+
+
+// Check if the number is strong number
+
+if ( userPrompt === null || userPrompt.toLowerCase() === 'exit' ) {
+    console.log("User chose to exit");
+}else if (isNaN(userPrompt)){
+    console.log("Invalid input. Please enter a valid number.");
+}else{
+    if(Number(userPrompt) < 0){
+        console.log("Please enter a non-negative number.");
+    }else{
+        let temp = Number(userPrompt);
+        let sumOfFactorials = 0;
+        while (temp > 0) {
+            let digit = temp % 10;
+            let fact = 1;
+            for (let i = 1; i <= digit; i++) {
+                fact *= i;
+            }
+            sumOfFactorials += fact;
+            temp = Math.floor(temp / 10);
+        }
+        if(sumOfFactorials === Number(userPrompt)){
+            console.log(userPrompt + " is a strong number.");
+        }else{
+            console.log(userPrompt + " is not a strong number.");
+        }
+    }
+}
